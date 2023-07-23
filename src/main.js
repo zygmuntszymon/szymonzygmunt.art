@@ -1,15 +1,15 @@
-const header = document.getElementById('header');
+const trailer = document.getElementById("trailer");
 
-document.addEventListener('scroll', checkScrollPosition)
+window.onmousemove = e => {
+    const x = e.clientX - 40,
+        y = e.clientY - 40;
 
-function checkScrollPosition() {
-    lastKnownScrollPosition = window.scrollY;
-    console.log(lastKnownScrollPosition);
 
-    if (lastKnownScrollPosition > 50 && !header.classList.contains('header-scrolled')) {
-        header.classList.add('header-scrolled');
+    const keyframes = {
+        transform: `translate(${x}px, ${y}px)`
     }
-    if (lastKnownScrollPosition < 50 && header.classList.contains('header-scrolled')) {
-        header.classList.remove('header-scrolled');
-    }
+    trailer.animate(keyframes, {
+        duration: 400,
+        fill: 'forwards'
+    })
 }
