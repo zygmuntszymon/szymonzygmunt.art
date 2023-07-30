@@ -100,7 +100,7 @@ body {
     display: inline-block;
     position: relative;
     line-height: 0;
-    background: #42a4ff;
+    //background: #42a4ff;
 
     img {
         position: relative;
@@ -111,25 +111,25 @@ body {
         max-width: 1360px;
         bottom: 10vh;
 
-        -webkit-filter: brightness(100%) contrast(120%) grayscale(100%) hue-rotate(0deg) invert(0%) opacity(100%) saturate(100%) sepia(0%);
-        filter: brightness(100%) contrast(120%) grayscale(100%) hue-rotate(0deg) invert(0%) opacity(100%) saturate(100%) sepia(0%);
-        mix-blend-mode: multiply;
+        // -webkit-filter: brightness(100%) contrast(120%) grayscale(100%) hue-rotate(0deg) invert(0%) opacity(100%) saturate(100%) sepia(0%);
+        // filter: brightness(100%) contrast(120%) grayscale(100%) hue-rotate(0deg) invert(0%) opacity(100%) saturate(100%) sepia(0%);
+        // mix-blend-mode: multiply;
 
         -webkit-animation: opacity-up 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
         animation: opacity-up 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
     }
 
-    &::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        mix-blend-mode: lighten;
-        background: #ab0000;
-        opacity: 0.83;
-    }
+    // &::after {
+    //     content: '';
+    //     position: absolute;
+    //     width: 100%;
+    //     height: 100%;
+    //     top: 0;
+    //     left: 0;
+    //     mix-blend-mode: lighten;
+    //     background: #ab0000;
+    //     opacity: 0.83;
+    // }
 }
 
 .hero-text {
@@ -163,7 +163,30 @@ body {
     height: 100vh;
     width: 100vw;
     color: $col-bg;
-    background-color: $col-text;
+    background-color: black;
+
+    @include centering(center, start);
+
+    .about-container {
+        width: 80%;
+
+        h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        p {
+            span {
+                font-weight: bold;
+                font-size: 2.5rem;
+                color: crimson;
+            }
+
+            font-size: 1.75rem;
+        }
+    }
+
 }
 
 /**
