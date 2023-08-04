@@ -39,7 +39,7 @@ body:hover #trailer {
   position: fixed;
   left: 0px;
   top: 0px;
-  z-index: 10000;
+  z-index: 500;
   pointer-events: none;
   opacity: 0;
   transition: opacity 500ms ease;
@@ -127,24 +127,91 @@ body:hover #trailer {
   background-color: black;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   flex-direction: column;
 }
 .about .about-container {
-  width: 80%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-direction: row;
 }
-.about .about-container h1 {
-  font-size: 4rem;
+.about .about-container div {
+  position: relative;
+  width: 50%;
+  padding: 20px;
+}
+.about .about-container div p {
+  text-align: justify;
   font-weight: bold;
-  margin-bottom: 20px;
+  font-size: 2rem;
 }
-.about .about-container p {
-  font-size: 1.75rem;
+.about .about-container img {
+  width: 40%;
+  float: right;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, 0.4) 5px 5px, rgba(255, 255, 255, 0.3) 10px 10px, rgba(255, 255, 255, 0.2) 15px 15px, rgba(255, 255, 255, 0.1) 20px 20px, rgba(255, 255, 255, 0.05) 25px 25px;
 }
-.about .about-container p span {
-  font-weight: bold;
-  font-size: 2.5rem;
-  color: crimson;
+
+.button-85 {
+  padding: 1em 3em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 999;
+  border-radius: 10px;
+  -moz-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  font-size: 1rem;
+  margin-top: 20px;
+  float: right;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
 }
 
 /**
